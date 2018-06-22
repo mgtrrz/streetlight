@@ -1,2 +1,4 @@
 .DS_Store
 **/.vagrant
+/www/*
+!/www/index.html

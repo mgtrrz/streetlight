@@ -24,15 +24,14 @@ Git clone this project into a directory on your computer.
 
 Example:
 ```
-~$ mkdir -p Documents/Vagrant/Project
-~$ cd Documents/Vagrant/Project
-Project$ git clone https://github.com/mgtrrz/streetlight.git
+~$ mkdir -p Documents/Vagrant/
+~$ cd Documents/Vagrant/
+Vagrant$ git clone https://github.com/mgtrrz/streetlight.git
 ```
 
-To begin the VM setup, simply run: `vagrant up`
+Provided you've installed Vagrant and Virtualbox, begin the VM setup by simply running: `vagrant up`
 
 ### Post Setup
-
 
 Add the following to your /etc/hosts file:
 
@@ -45,10 +44,14 @@ Add the following to your /etc/hosts file:
 Once installation is complete, visit the sites!
 
 http://phpmyadmin.local:8080
+
 http://wp.local:8080
+
 http://dev.local:8080
 
 The `www` folder on your local computer is mounted to the `/var/www/local` folder on the VM and contains folders to the `dev` and the `wp` site. You can navigate into these folders and make any changes. There is no need to refresh, restart or run any commands. Any changes you make are instant.
+
+If you're going to be developing using Git in the `www` folder, remove the `.git` folder in the root project directory. 
 
 #### Accessing WordPress
 
@@ -61,6 +64,8 @@ To log in to the WordPress Admin, you'll need to set your password using `wp-cli
 ```
 vagrant@vagrant:/var/www/wp$ wp user update 1 --user_pass=YOURPASSWORD
 ```
+
+(Don't actually use YOURPASSWORD, thanks.)
 
 Then try logging in at http://wp.local:8080/wp-admin
 
